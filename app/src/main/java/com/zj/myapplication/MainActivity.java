@@ -28,15 +28,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        try {
-            byte[] mnn =  readLocalFile();
-            Log.d("length", "onCreate: " + mnn.length);
-            byte[] code = encode(mnn);
-
-//            byte[] n_code = decode( mnn);
-            writeFile(code);
-
-        }catch (Exception e){}
     }
 
     private byte[] readLocalFile() throws IOException {
@@ -106,8 +97,5 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-    public static native byte[] encode(byte[] _str);
-    public static native byte[] decode(byte[] _str);
 
 }
